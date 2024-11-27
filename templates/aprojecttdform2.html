@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Login</title>
+    {% include 'header_index_main.html' %}
+    {% include 'footer_index_main.html' %}
+<!--    <link rel="stylesheet" href="{{url_for('static',filename='css/background.css')}}">-->
+<!--    <style>-->
+<!--        body {-->
+<!--            margin-top: 10%;-->
+<!--            background:url('static/image/3.jpg');-->
+<!--            background-repeat:no-repeat;-->
+<!--            background-size:cover;-->
+<!--        }-->
+<!--    </style>-->
+</head>
+<body>
+<div class="container">
+    <div class="col-md-6 offset-md-3">
+        <h1 class="text-center mb-4">User Login</h1>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages%}
+              {% for category,message in messages%}
+                  <div class="alert alert-{{category}}">{{message}}</div>
+              {% endfor %}
+          {% endif %}
+        {% endwith%}
+
+        <form action=" " method="POST" autocomplete="off">
+            <div class="form-group">
+                <label for="username" style="font-size:15px;">Username</label>
+                <input type="text" name="username" class="form-control" required id="username" style="font-size:15px;">
+            </div>
+            <div class="form-group">
+                <label for="password" style="font-size:15px;">Password</label>
+                <input type="password" name="password" class="form-control" required id="password" style="font-size:15px;">
+            </div>
+            <div class="form-group">
+                <label for="email" style="font-size:15px;">Email</label>
+                <input type="email" name="email" class="form-control" required id="email" style="font-size:15px;">
+            </div>
+            <div class="form-group text-center">
+                <input type="submit" class="btn btn-primary" value="Register" name="register" style="font-size:15px;" style="font-size:15px;">
+            </div>
+        </form>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Tasks</title>
+    {% include 'header_index_main.html' %}
+    {% include 'footer_index_main.html' %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            margin-top: 10%;
+            background:url('static/image/3.jpg');
+            background-repeat:no-repeat;
+            background-size:cover;
+            background-blur:50px;
+        }
+        .checkbox {
+            width: 100px;
+            height: 30px;
+        }
+        .btn {
+            width: 100px;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+    <table class="table table-bordered" style="font-size:20px;">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Title</th>
+                <th scope="col">Date</th>
+                <th scope="col">Delete</th>
+                <th scope="col">Update</th>
+                <th scope="col">Complete Tasks</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for u_tasks in user_tasks %}
+            <tr>
+                <td>{{ u_tasks.user.name }}</td>
+                <td>{{ u_tasks.title }}</td>
+                <td>{{ u_tasks.date }}</td>
+                <td>
+                    <a href="{{ url_for('delete', id=u_tasks.id) }}">
+                        <input type="button" class="btn btn-danger" value="Delete" style="font-size:15px;">
+                    </a>
+                </td>
+                <td>
+                    <a href="{{ url_for('update', id=u_tasks.id) }}">
+                        <input type="button" class="btn btn-warning" value="Update" style="font-size:15px;">
+                    </a>
+                </td>
+                <td>
+                    <a href="{{ url_for('completetask', id=u_tasks.id) }}">
+                        <input type="button" class="checkbox btn btn-info" value="View" style="font-size:15px;">
+                    </a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

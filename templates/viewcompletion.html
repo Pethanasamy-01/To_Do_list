@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task List</title>
+    {% include 'header_index_main.html' %}
+    {% include 'footer_index_main.html' %}
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <div class="col-md-offset-3 col-md-5">
+        <table class="table table-bordered" style="font-size:23px;">
+            <thead class="thead-light">
+                <tr>
+                    <th scope="col">Completed</th>
+                    <th scope="col">Uncompleted</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <ul >
+                            {% for c_task in complete_task %}
+                                <li>{{ c_task }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                    <td>
+                        <ul >
+                            {% for uc_task in uncomplete_task %}
+                                <li>{{ uc_task }}</li>
+                            {% endfor %}
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</body>
+</html>
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Title</title>-->
+<!--    {% include 'footer_index_main.html' %}-->
+<!--    {% include 'header_index_main.html' %}-->
+<!--</head>-->
+<!--<body>-->
+<!--<div class="container">-->
+<!--    <div class="col-md-offset-3 col-md-5">-->
+<!--          <table class="table">-->
+<!--  <thead class="thead-light">-->
+<!--    <tr>-->
+<!--&lt;!&ndash;      <th scope="col">Last</th>&ndash;&gt;-->
+<!--      <th scope="col">uncompleted</th>-->
+<!--    </tr>-->
+<!--  </thead>-->
+<!--  <tbody>-->
+<!--&lt;!&ndash;    <tr>&ndash;&gt;-->
+<!--&lt;!&ndash;      {% for c_task in complete_task%}&ndash;&gt;-->
+<!--&lt;!&ndash;        <td>{{c_task}}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;      {% endfor %}&ndash;&gt;-->
+
+<!--&lt;!&ndash;    </tr>&ndash;&gt;-->
+
+
+
+<!--  </tbody>-->
+<!--</table>-->
+<!--    </div>-->
+
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--&lt;!&ndash;    <link rel="stylesheet" href="/css/bootstrap.min.css">&ndash;&gt;-->
+<!--    {% include 'footer_index_main.html' %}-->
+<!--    {% include 'header_index_main.html' %}-->
+<!--    <title>Task List</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <div class="container mt-4">-->
+<!--        <h1 class="mb-3">Task List</h1>-->
+<!--        <table class="table table-striped table-bordered">-->
+<!--            <thead class="thead-light">-->
+<!--                <tr>-->
+<!--                    <th>#</th>-->
+<!--                    <th>Task</th>-->
+<!--                    <th>Status</th>-->
+<!--                </tr>-->
+<!--            </thead>-->
+<!--            <tbody>-->
+<!--                <tr>-->
+<!--                  {% for c_task in complete_task%}-->
+<!--                    <td>1</td>-->
+<!--                    <td>{{c_task}}</td>-->
+<!--                    <td>In Progress </td>-->
+<!--                 {% endfor %}-->
+<!--                </tr>-->
+<!--                <tr>-->
+<!--                   {% for uc_task in uncomplete_task %}-->
+<!--                    <td>2</td>-->
+<!--                    <td>{{uc_task}}</td>-->
+<!--                    <td>Completed</td>-->
+<!--                   {% endfor %}-->
+<!--                </tr>-->
+<!--            </tbody>-->
+<!--        </table>-->
+<!--    </div>-->
+<!--</body>-->
+<!--</html>-->
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <link rel="stylesheet" href="/css/bootstrap.min.css">-->
+<!--    <title>Task List</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <div class="container mt-5">-->
+<!--        <h1 class="mb-4">Task List</h1>-->
+<!--        <table class="table table-bordered">-->
+<!--            <thead class="thead-light">-->
+<!--                <tr>-->
+<!--                    <th>Completed Tasks</th>-->
+<!--                    <th>Uncompleted Tasks</th>-->
+<!--                </tr>-->
+<!--            </thead>-->
+<!--            <tbody>-->
+<!--                <tr>-->
+<!--                  {% for c_task in complete_task %}-->
+<!--                    <td>-->
+<!--                      <td>{{c_task}}</td>-->
+<!--                    </td>-->
+<!--                  {% endfor %}-->
+<!--                  {% for uc_task in uncomplete_task %}-->
+<!--                    <td>-->
+<!--                       <td>{{uc_task}}</td>-->
+<!--                    </td>-->
+<!--                  {% endfor %}-->
+<!--                </tr>-->
+
+<!--            </tbody>-->
+<!--        </table>-->
+<!--    </div>-->
+<!--</body>-->
+<!--</html>-->
