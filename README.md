@@ -1,0 +1,7 @@
+![image alt](https://github.com/Pethanasamy-01/To_Do_list/blob/main/static/image/task-1.PNG?raw=true)
+![image alt](https://github.com/Pethanasamy-01/To_Do_list/blob/main/static/image/task-2.PNG?raw=true)
+![image alt](https://github.com/Pethanasamy-01/To_Do_list/blob/main/static/image/task-3.PNG?raw=true)
+![image alt](https://github.com/Pethanasamy-01/To_Do_list/blob/main/static/image/task-4.PNG?raw=true)
+![image alt](https://github.com/Pethanasamy-01/To_Do_list/blob/main/static/image/task-5.PNG?raw=true)
+![image alt](https://github.com/Pethanasamy-01/To_Do_list/blob/main/static/image/task-6.PNG?raw=true)
+![image alt](https://github.com/Pethanasamy-01/To_Do_list/blob/main/static/image/task-7.PNG?raw=true)
