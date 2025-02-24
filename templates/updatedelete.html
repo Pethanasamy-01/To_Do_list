@@ -9,10 +9,9 @@
     <style>
         body {
             margin-top: 10%;
-            background:url('static/image/3.jpg');
+            background:url('static/image/8.jpeg');
             background-repeat:no-repeat;
             background-size:cover;
-            background-blur:50px;
         }
         .checkbox {
             width: 100px;
@@ -21,6 +20,9 @@
         .btn {
             width: 100px;
         }
+        td{
+            color: white;
+        }
     </style>
 
 </head>
@@ -28,10 +30,9 @@
 
 <div class="container">
     <table class="table table-bordered" style="font-size:20px;">
-        <thead class="thead-dark">
+        <thead class="thead-dark text-center">
             <tr>
-                <th scope="col">Name</th>
-                <th scope="col">Title</th>
+                <th scope="col">Task</th>
                 <th scope="col">Date</th>
                 <th scope="col">Delete</th>
                 <th scope="col">Update</th>
@@ -40,8 +41,7 @@
         </thead>
         <tbody>
             {% for u_tasks in user_tasks %}
-            <tr>
-                <td>{{ u_tasks.user.name }}</td>
+            <tr class="text-center">
                 <td>{{ u_tasks.title }}</td>
                 <td>{{ u_tasks.date }}</td>
                 <td>

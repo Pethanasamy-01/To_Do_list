@@ -8,9 +8,17 @@
     <link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">
 </head>
 <body>
+<style>
+    body {
+            margin-top: 10%;
+            background:url('static/image/8.jpeg');
+            background-repeat:no-repeat;
+            background-size:cover;
+        }
+</style>
 <div class="container" >
     <div class="col-md-offset-3 col-md-5">
-    <h1>To Do List for {{user}}</h1>
+    <h1 style="text-align:center; margin-top:20%;" class="page-header">Task Manager</h1>
       {% with messages=get_flashed_messages(with_categories=true) %}
             {% if messages %}
                 {% for category, message in messages %}
@@ -18,7 +26,7 @@
                 {% endfor %}
             {% endif %}
       {% endwith %}
-    <form action="/add_list" method="POST" autocomplete="off">
+    <form action="/add_list" method="POST" autocomplete="off" ">
       <div class="form-group">
           <label>title</label>
          <input type="text" name="title" placeholder="add your work" class="form-control" required>

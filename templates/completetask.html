@@ -2,39 +2,95 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Completion Tasks</title>
+
     {% include 'footer_index_main.html' %}
     {% include 'header_index_main.html' %}
-     <style>
-         .flexCheckDefault{
-           width:30px;
-           height:30px
-         }
-     </style>
+
+    <style>
+      body {
+            margin-top: 10%;
+            background:url('static/image/8.jpeg');
+            background-repeat:no-repeat;
+            background-size:cover;
+        }
+       
+        .container {
+            margin-top: 8%;
+            max-width: 600px;
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        /* Page Header */
+        .page-header {
+            font-size: 26px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* Task Checkbox Styling */
+        .form-check {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            padding: 8px 10px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            transition: 0.3s;
+        }
+
+        .form-check:hover {
+            background: #e9ecef;
+        }
+
+        .form-check-input {
+            width: 22px;
+            height: 22px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        .form-check-label {
+            font-size: 18px;
+            font-weight: normal;
+            color: #333;
+        }
+        .form-check-label h3 {
+            font-size: 18px;
+            font-weight: normal;
+            margin-left:10px;
+            color: #333;
+        }
+
+        
+    </style>
 </head>
 <body>
-<div class="container" style="margin-top:10%;">
-    <div class="col-md-offset-3 col-md-5">
-        <h1>your completion tasks</h1>
-        <hr>
-       <form action="/complete_uncomplete" method="POST">
-         {% for u_task in user_task %}
-           <div class="form-check">
-             <input class="form-check-input" type="checkbox" name="checkbox" value="{{u_task.title}}" id="flexCheckDefault">
-               <label class="form-check-label" for="flexCheckDefault"><h3>{{u_task.title}}({{u_task.date}})</h3></label>
-           </div>
-<!--           <div class="form-check">-->
-<!--              <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>-->
-<!--              <label class="form-check-label" for="flexCheckChecked">Checked checkbox-->
-<!--              </label>-->
-<!--           </div>-->
-         {% endfor %}
-           <div class="form-group">
-               <input type="submit" class="form-control btn btn-success" value="Submit">
-           </div>
-       </form>
 
-    </div>
+<div class="container">
+    <h1 class="page-header">Completion Tasks</h1>
+
+    <form action="/complete_uncomplete" method="POST">
+        {% for u_task in user_task %}
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" name="checkbox" value="{{ u_task.title }}" id="task{{ loop.index }}">
+                <label class="form-check-label" for="task{{ loop.index }}">
+                    <h3>{{ u_task.title }} ({{ u_task.date }})</h3>
+                </label>
+            </div>
+        {% endfor %}
+
+        <div class="form-group">
+            <input type="submit" class="form-control btn btn-success" value="Submit">
+        </div>
+    </form>
 </div>
+
 </body>
 </html>
